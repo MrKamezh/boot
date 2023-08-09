@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        *{
+            margin: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .container{
+           width: 100%;
+           height: 100vh;
+           background: rgb(244, 208, 208);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+        }
+        .click{ 
+            background-color: rgb(198, 0, 0);
+            color: aliceblue;
+            border:none;
+            height: 35px;
+            width: 105px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 1s;
+            box-shadow: 3px 3px 5px rgba(1,1,1,1);
+            
+        }
+        .click:hover
+        {
+            opacity: .6;
+            box-shadow: 5px 5px 5px rgba(224, 33, 33, 1);
+        }
+        .click:active
+        {
+            opacity:.3;
+            box-shadow: 5px 5px 5px rgb(1, 9, 2);
+        }
+        .pop{
+            width: 400px;
+            background: #fff;
+            border-radius: 8px;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            
+        }
+        #close{
+            position: absolute;
+            left: 86%;
+        }
+        .op{
+            
+            visibility: visible;
+            top: 50%; 
+            transform: translate(-50%,-50%) scale(1);
+    
+        }
+    </style>
+    <head>
+        <a href="2.html"><button>Interactive web page</button></a>
+            <br><br>
+            <a href="index.html"><button>modal window</button></a>
+            <br><br>
+        <title>BMW</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+       <div class="container">
+        <button type="button" class="click" onclick="open()">click!</button>
+        <div class="pop" id="popup">
+            <img src="./download.jpeg">
+            <p 
+            style="margin-left: 9px;"
+            ><strong style="text-align: center;">it's our pleasure to have
+                <br><span
+                style="margin-left: 1px;"
+                > a viewer like you !!</span> </strong></p>
+                <button
+                onclick="close()"
+                type="button" id="close">close</button>
+        </div>
+    </div>
+    <script>
+        let x = document.getElementById("popup");
+        function open(){
+          x.style.backgroundColor='red';
+        }
+        function close(){
+           x.classList.remove("pop")
+        }
+    </script>
+    </body>
+</html>
